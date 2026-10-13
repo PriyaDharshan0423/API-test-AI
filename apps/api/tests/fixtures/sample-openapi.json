@@ -1,0 +1,1 @@
+{"openapi":"3.0.0","info":{"title":"Interactive Demo API","version":"1.0.0"},"paths":{"/v1/widgets":{"post":{"summary":"Create a widget","requestBody":{"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"name":{"type":"string"}}}}}},"responses":{"201":{"description":"Created"}}}}}}
