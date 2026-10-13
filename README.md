@@ -2,6 +2,12 @@
 
 API Test AI is a multi-tenant SaaS starter for importing OpenAPI documents, validating JSON payloads against JSON Schema, producing schema-based repair suggestions, generating starter test cases, and inspecting API quality from a dashboard. The repository is an executable MVP foundation, **not a security-audited production service**; production hardening items are listed below.
 
+## Deploy the Streamlit edition
+
+The repository includes a separate Streamlit Community Cloud-compatible interface. In Streamlit Cloud, select this GitHub repository and set **Main file path** to `streamlit_app.py` (at the repository root). Streamlit installs its Python packages from the root `requirements.txt`.
+
+The Streamlit edition imports OpenAPI JSON/YAML, browses operations, validates payloads locally, and suggests schema-based repairs. For GPT-backed repair, deploy the FastAPI service separately and add `API_BASE_URL` in the Streamlit app's Secrets, pointing to the secured API base URL (for example, `https://your-api.example.com`). Do not put OpenAI API keys in Streamlit app code or expose them to the browser. Streamlit Cloud does not host the Next.js UI, PostgreSQL, or Redis services; use the Docker Compose/production deployment paths below for the complete stack.
+
 ## Architecture
 
 ```mermaid
@@ -36,6 +42,8 @@ apps/
     app/globals.css
     Dockerfile
 infra/schema.sql             # Tenant-aware PostgreSQL baseline
+streamlit_app.py             # Streamlit Community Cloud entry point
+requirements.txt             # Streamlit Cloud Python dependencies
 .github/workflows/ci.yml
 .env.example
 docker-compose.yml
