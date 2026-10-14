@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # API Test AI
 
 API Test AI is a multi-tenant SaaS starter for importing OpenAPI documents, validating JSON payloads against JSON Schema, producing schema-based repair suggestions, generating starter test cases, and inspecting API quality from a dashboard. The repository is an executable MVP foundation, **not a security-audited production service**; production hardening items are listed below.
@@ -135,3 +136,6 @@ For frontend-only development, run `npm install` then `npm run dev` in `apps/web
 ## License
 
 No license has been assigned. Add an appropriate license before distributing this repository.
+=======
+# API-test-AI
+>>>>>>> f156deebc1ca84b742e7d1fee210200f43a8e5b8
